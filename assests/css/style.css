@@ -1,0 +1,130 @@
+header {
+    z-index: 1000;
+}
+html {
+            --color: #9c7e2d;
+        }
+.sidebar {
+    width: 100%;
+    position: absolute;
+    left:0px;
+    top: 50px;
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(-100%);
+    z-index: -1;
+    background-color: white;
+    color: var(--color);
+    box-shadow: 0.5px 1.5px  2px var(--color);
+}
+
+.sidebar.menuActive {
+    transform: translateY(0);
+}
+
+.offerList {
+    list-style-position: inside;
+    
+}
+
+.clamptext {
+    display: -webkit-box;
+    line-clamp: 6;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.overviewBtn {
+    animation: spin 2s linear forwards;
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(270deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.priceSheetImg:hover {
+    background-color: black;
+}
+
+/* Amenities css start */
+.amenities-card {
+    /* border: 1px solid rgb(219, 219, 219); */
+    padding: 0.5rem;
+    min-width: 30%;
+    height: 17rem;
+    overflow: visible;
+}
+
+.amenities-card img {
+    border-radius: 10px;
+    padding: 0px 10px;
+    height: 14rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.prevBtn, .nextBtn {
+    /* box-shadow: 0.1rem 0.1rem 1px var(--color); */
+    border: 0.1rem solid var(--color);
+    height: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--color);
+    font-weight: 800;
+    background-color: white;
+}
+
+.highlight {
+    transform: scale(1.2,1.1);
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+.carouselCount {
+    padding: 0.4rem;
+    background-color: rgb(220, 220, 220);
+    border-radius: 50%;
+}
+
+.carouselCount.active {
+    background-color: var(--color);
+}
+
+#amenities-popupModal {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    padding: 10%;
+}
+
+#amenities-popupclose {
+    border: 3px solid var(--color);
+    padding: 0 0.5rem;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+@media (max-width:480px) {
+    .amenities-card {
+        min-width: 80%;
+    }
+
+    #amenities-popupModal {
+        padding: 10% 1%;
+    }
+}
